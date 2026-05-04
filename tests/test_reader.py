@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from csv_reader import filter_rows, get_columns, get_headers, iter_csv, read_csv
+from privyc import filter_rows, get_columns, get_headers, iter_csv, read_csv
 
 FIXTURE = Path(__file__).parent / "fixtures" / "sample.csv"
 

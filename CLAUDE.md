@@ -15,7 +15,7 @@ pytest
 pytest tests/test_reader.py::test_filter_rows_single_condition
 
 # Run tests with coverage
-pytest --cov=csv_reader --cov-report=term-missing
+pytest --cov=privyc --cov-report=term-missing
 
 # Build distribution packages (requires: pip install build)
 python -m build
@@ -27,7 +27,7 @@ twine upload dist/*
 ## Architecture
 
 ```
-src/csv_reader/       ← installable package (src layout keeps it off sys.path during dev)
+src/privyc/       ← installable package (src layout keeps it off sys.path during dev)
   __init__.py         ← public API: re-exports the five functions + __version__
   reader.py           ← all logic lives here
   py.typed            ← PEP 561 marker; tells type checkers this package has annotations
@@ -52,7 +52,7 @@ All cell values are always `str`. `iter_csv` is the core primitive — the other
 
 ## Packaging notes
 
-- Package name on PyPI: `csv-reader` (verify availability before publishing)
-- Import name: `csv_reader`
+- Package name on PyPI: `privyc` (verify availability before publishing)
+- Import name: `privyc`
 - `pyproject.toml` uses the `src/` layout with `setuptools`
-- Before bumping the version, update it in both `pyproject.toml` and `src/csv_reader/__init__.py`
+- Before bumping the version, update it in both `pyproject.toml` and `src/privyc/__init__.py`

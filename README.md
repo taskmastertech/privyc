@@ -1,4 +1,4 @@
-# csv-reader
+# privyc
 
 A lightweight Python library for reading and querying CSV files. Zero external dependencies — built entirely on Python's standard library.
 
@@ -17,22 +17,20 @@ A lightweight Python library for reading and querying CSV files. Zero external d
 ### From PyPI
 
 ```bash
-pip install csv-reader
+pip install privyc
 ```
-
-> **Before publishing:** verify the name `csv-reader` is available on [pypi.org](https://pypi.org). If it's taken, update the `name` field in `pyproject.toml`.
 
 ### From GitHub (without publishing to PyPI)
 
 ```bash
-pip install git+https://github.com/yourusername/csv-reader.git
+pip install git+https://github.com/taskmastertech/privyc.git
 ```
 
 ### For local development
 
 ```bash
-git clone https://github.com/yourusername/csv-reader.git
-cd csv-reader
+git clone https://github.com/taskmastertech/privyc.git
+cd privyc
 pip install -e ".[dev]"
 ```
 
@@ -43,7 +41,7 @@ The `[dev]` extras install `pytest` and `pytest-cov`.
 ## Quick Start
 
 ```python
-from csv_reader import read_csv, iter_csv, get_headers, get_columns, filter_rows
+from privyc import read_csv, iter_csv, get_headers, get_columns, filter_rows
 
 # Read all rows
 rows = read_csv("data.csv")
@@ -263,7 +261,7 @@ average = sum(scores) / len(scores)
 
 ```python
 import csv
-from csv_reader import filter_rows, get_headers
+from privyc import filter_rows, get_headers
 
 rows = filter_rows("users.csv", gender="Female")
 headers = get_headers("users.csv")
@@ -291,7 +289,7 @@ pytest
 With coverage:
 
 ```bash
-pytest --cov=csv_reader --cov-report=term-missing
+pytest --cov=privyc --cov-report=term-missing
 ```
 
 ---
